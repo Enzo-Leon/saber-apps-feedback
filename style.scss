@@ -1,0 +1,110 @@
+@import './voting.scss';
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin: 0;
+}
+
+
+.feedback-container {
+    width: 60%;
+    min-width: 450px;
+    height: auto;
+    margin: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    box-shadow: 4px 4px 7px 1px;
+    @media screen and (max-width: 651px) {
+        width: 100%;
+        padding: 0;
+        border-bottom: 2px solid black;
+        box-shadow: none;
+    }
+    .form-box {
+        width: 85%;
+        max-width: 800px;
+        height: auto;
+        background: white;
+        border: 1px solid black;
+        margin: 35px auto;
+        @media screen and (max-width: 651px) {
+            width: 100%;
+            border-bottom: 2px solid black;
+            box-shadow: none;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            max-height: 125px;
+            margin: 5px 0;
+        }
+        .feedback-button {
+            width: 150px;
+            height: 45px;
+            margin: auto;
+            button {
+                width: 135px;
+                height: 35px;
+                margin: 5px auto;
+            }
+        }
+        p {
+            display: inline-block;
+            text-align: right;
+            width: 50%;
+        }
+        input {
+            width: 45%;
+            margin: 0 5px;
+            display: inline-block;
+        }
+    }
+    // Feedback replies section of the form
+    .feedback-box-replies {
+        width: 85%;
+        max-width: 800px;
+        height: auto;
+        background: white;
+        border: 1px solid black;
+        margin: auto;
+        .feedback-box-title {
+            text-align: center;
+            font-family: Arial;
+        }
+        .reply {
+            font-family: sans-serif;
+            width: 100%;
+            height: inherit;
+            border-top: 2px solid black;
+            .header-info {
+                height: auto;
+                .reply-user-left {
+                    width: 70%;
+                    height: auto;
+                    display: inline-block;
+                    .reply-username {
+                        
+                    }
+                }
+                .reply-user-right {
+                    width: 30%;
+                    height: auto;
+                    float: right;
+                    
+                }
+            }
+            .body-info {
+                height: auto;
+                padding: 0 3px;
+            }
+        }
+    }
+}
