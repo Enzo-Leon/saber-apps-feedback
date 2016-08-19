@@ -1,0 +1,29 @@
+{
+  "name": "feedback-form",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enzo-Leon/saber-apps-feedback.git"
+  },
+  "author": "Anthony Rodriguez <syntaxleon@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enzo-Leon/saber-apps-feedback/issues"
+  },
+  "homepage": "https://github.com/Enzo-Leon/saber-apps-feedback#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "node-sass-middleware": "^0.9.8",
+    "serve-favicon": "^2.3.0"
+  }
+}
