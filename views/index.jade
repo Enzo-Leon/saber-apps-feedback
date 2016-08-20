@@ -1,72 +1,42 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p UserName: #{data[0].username}
-  p Feedback: #{data[0].feedback}
-  p Ranking: #{data[0].ranking}
 
-  <div class='feedback-container'>
-  <div class='form-box'>
-  <form class='feedbck-form' name='feedback-box'>
-  <textarea for='feedback-box' name='feedback' rows='4' cols='50' maxlength='500' placeholder='Enter text here' onkeyup='remaining(this)' required></textarea>
-  <input for='feedback-box' name='username' placeholder='Enter a Nickname' required />
-  <p><span id='text-counter'>500</span> Characters remain</p>
+    <div class='feedback-container'>
+    <div class='form-box'>
+    <form class='feedbck-form' name='userFeedback' action='/form' method='POST'>
+    <textarea for='userFeedback' name='feedback' rows='4' cols='50' maxlength='500' placeholder='Enter text here' onkeyup='remaining(this)' required></textarea>
+    <input for='userFeedback' name='username' placeholder='Enter a Nickname' required />
+    <p><span id='text-counter'>500</span> Characters remain</p>
 
-  <div class='feedback-button'>
-  <button class='submit-fb' for='feedback-box' type='submit'>Submit Feedback</button>
-  </div>
-  </form>
-  </div>
+    <div class='feedback-button'>
+    <button class='submit-fb' for='feedback-box' type='submit' >Submit Feedback</button>
+    </div>
+    </form>
+    </div>
 
-  <!--User submitted feedback goes in here-->
-  <div class='feedback-box-replies' id='feedback-replies'>
-  <h1 class='feedback-box-title'>User Submitted Feedback</h1>
-  <!--This will be generated dynamically depending on what is in stored information-->
-  <div class='reply'>
-  <div class='header-info'>
-  <div class='reply-user-left'>
-  <h4 >Submitted By: <span class='reply-username'>TestUserName404</span></h4>
-  <div class='body-info'>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Nullam eu rutrum leo. Mauris velit ex, egestas ut hendrerit vel, tempor vitae enim.
-  Pellentesque quis nunc consectetur, iaculis tellus vel, rutrum augue. Fusce ultricies
-  commodo ex, lobortis efficitur purus volutpat nec. Mauris eget libero at est.</p>
-  </div>
-  </div>
-  <div class='reply-user-right'>
-  <div class="vote chev">
-  <div class="increment up"></div>
-  <div class="increment down"></div>
+    <!--User submitted feedback goes in here-->
+    <div class='feedback-box-replies' id='feedback-replies'>
+    <h1 class='feedback-box-title'>User Submitted Feedback</h1>
+    each val in data
 
-  <div class="count">10</div>
-  </div>
-  </div>.
-  </div>
-  </div>
+        <!--This will be generated dynamically depending on what is in stored information-->
+        <div class='reply'>
+        <div class='header-info'>
+        <div class='reply-user-left'>
+        <h4 >Submitted By: <span class='reply-username'>#{val.Username}</span></h4>
+        <div class='body-info'>
+        <p>#{val.Comment}</p>
+        </div>
+        </div>
+        <div class='reply-user-right'>
+        <div class="vote chev">
+        <div class="increment up"></div>
+        <div class="increment down"></div>
 
-  <div class='reply'>
-  <div class='header-info'>
-  <div class='reply-user-left'>
-  <h4 >Submitted By: <span class='reply-username'>TestUserName404</span></h4>
-  <div class='body-info'>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Nullam eu rutrum leo. Mauris velit ex, egestas ut hendrerit vel, tempor vitae enim.
-  Pellentesque quis nunc consectetur, iaculis tellus vel, rutrum augue. Fusce ultricies
-  commodo ex, lobortis efficitur purus volutpat nec. Mauris eget libero at est.</p>
-  </div>
-  </div>
-  <div class='reply-user-right'>
-  <div class="vote chev">
-  <div class="increment up"></div>
-  <div class="increment down"></div>
-
-  <div class="count">20</div>
-  </div>
-  </div>.
-  </div>
-  </div>
-
-  </div>
-  </div>
+        <div class="count">#{val.Ranking}</div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>

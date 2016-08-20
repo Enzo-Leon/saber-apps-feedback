@@ -37,7 +37,7 @@ function remaining(text)
         var textCount = (500 - text.value.length);
         textCounter.innerHTML = textCount;
     }
-};
+}
 
 $("form").on( "submit", function(event)
 {
@@ -48,6 +48,4 @@ $("form").on( "submit", function(event)
   console.log(FBF, FBU);
   $('textarea').val('');
   $('input').val('');
-  
 });
-
